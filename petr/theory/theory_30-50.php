@@ -47,4 +47,32 @@
     echo $string[strlen($string) - 1];
 
     # 43 след задание
+
+    $num_str = '12345';
+    echo $num_str[0] + $num_str[1] + $num_str[2] + $num_str[3] + $num_str[4];
+
+    $num_str = (string) 12345;
+    echo $num_str[0] + $num_str[1] + $num_str[2] + $num_str[3] + $num_str[4];
+
+    $num = 47;
+	$num += 7;
+	$num -= 18;
+	$num *= 10;
+	$num /= 15;
+	echo $num;
+
+    $num = 10;
+	$num++;
+	$num++;
+	$num--;
+	echo $num . '<br>';
+
+    echo 60 * 60 * 24 . '<br>';
+    echo 60 * 60 * 24 * 30 . '<br>';
+
+    echo 'Площадь круга: ' . 3.14 * 5 * 5;
+    echo 'Площадь квадрата: ' . 8 * 8;
+    echo 'Площадь прямоугольника: ' . 8 * 4;
+
+    # Завершено 30-50
 ?>
