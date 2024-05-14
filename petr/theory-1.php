@@ -9,7 +9,7 @@
     # Включить вывод ошибок на экран. Можно по одной строке, а можно сразу обе.
 
     error_reporting(0);
-	ini_set('display_errors', 'off');
+    ini_set('display_errors', 'off');
 
     # Отключить вывод ошибок на экран.
 
