@@ -304,4 +304,80 @@
 	} elseif ($num === 3) {
 		echo 'value3';
 	}
+
+	$num = 3;
+	if ($num >= 0) {
+		if ($num <= 5) {
+			echo 'меньше или равно 5';
+		} else {
+			echo 'больше 5';
+		}
+	} else {
+		echo 'меньше нуля';
+	}
+
+	$lang = 'ru';
+	if ($lang === 'ru') {
+		echo 'рус';
+	} elseif ($lang === 'en') {
+		echo 'анг';
+	} elseif ($lang === 'de') {
+		echo 'нем';
+	} else {
+		echo 'язык не поддерживается';
+	}
+
+	$lang = 'ru';
+	switch ($lang) {
+		case 'ru':
+			echo 'рус';
+		break;
+		case 'en':
+			echo 'англ';
+		break;
+		case 'de':
+			echo 'нем';
+		break;
+		default:
+			echo 'язык не поддерживается';
+		break;
+	}
+
+	// Блок default and break является необязательным.
+
+	$num = 1;
+	switch ($num) {
+		case 1:
+		case 2:
+			$res = 'a';
+		break;
+		case 3:
+			$res = 'b';
+		break;
+	}
+	echo $res;
+
+	// тернарный оператор
+	// переменная = условие ? значение1 : значение2;
+	$age = 17;
+	$adult = $age >= 18 ? true : false;
+	var_dump($adult);
+
+	$elem = isset($arr['test']) ? $arr['test'] : 'empty';
+
+	$elem = $arr['test'] ?? 'empty';
+
+	// Цепочки операторов объединения с null в PHP
+	$elem = $arr['test1'] ?? $arr['test2'] ?? 'empty'; 
+
+	$str = '12345';
+	if (strlen($str) >= 3) {
+		echo '!';
+	}
+	
+	$str = '12345';
+	$last = $str[strlen($str) - 1];
+	if ($last == 5) {
+		echo '!';
+	}
 ?>
