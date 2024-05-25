@@ -127,4 +127,23 @@
 		$num = $num / 2;
 	}
 	echo $num; // после цикла получим результат
+	for ($num = 500; $num > 10; 
+	$num = $num / 2); 
+	echo $num; // после цикла получим результат 
+
+	$arr = [1, 2, 3, 4, 5];
+	$length = count($arr);
+	for ($i = 0; $i < $length; $i++) {
+		$arr[$i]++;
+	}
+	var_dump($arr); // выведет [2, 3, 4, 5, 6]
+
+
+	$arr = [1, 2, 3, 4, 5];
+	$length = count($arr);
+	for ($i = 0; $i < $length; $i++) {
+		$arr[$i] += 5;
+	}
+	var_dump($arr); // выведет [6, 7, 8, 9, 10] 
+ 
 ?>
