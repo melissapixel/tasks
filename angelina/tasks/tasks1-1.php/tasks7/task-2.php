@@ -135,19 +135,29 @@
 
  <?=  str_shuffle('abcde') . '<br>'?>
 
- <?php
-    $arr = [];
-    $range = range('a', 'z');
-    foreach ($arr as $elem){
-        for($i = 0; $i <= 8; $i++){
-            $arr[] = str_shuffle(range('a', 'z'));
-        }
-        
+<?= number_format(12345678, 2, '.', ' '); ?>
+
+<?php
+    for($i = 0; $i <= 9; $i++){
+        echo str_repeat('x', $i) . '<br>';
     }
-    var_dump($arr);
 ?>
 
-<!-- <?=  str_shuffle(range('a', 'z')) ?> -->
+<?php
+    $k = 0;
+    for($i = 0; $i <= 9; $i++){
+        
+        echo str_repeat($k++, $i) . '<br>';
+    }
+?>
 
+<?= strip_tags('html, <b>php</b>, js') . '<br>' ?>
+<?= strip_tags('html, <b>php</b>, js','<b><i>') . '<br>' ?>
+<?= htmlspecialchars('html, <b>php</b>, js') ?>
 
-
+<?= ord('a') . '<br>' ?>
+<?= ord('b') . '<br>' ?>
+<?= ord('c') . '<br>' ?>
+<?= ord(' ') . '<br>' ?>
+<?= chr(33) . '<br>' ?>
+<?= chr(mt_rand(65, 90)); ?>
