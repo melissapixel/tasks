@@ -171,10 +171,25 @@
 
 <br>
 
-<!-- <?php
-    $str = 'K';
-    // $big_lat = 
-    if ($str === range('A', 'Z')){
-        echo 'Yes';
+<?php
+    $text = 'J';
+    $str = range('A', 'Z');
+    shuffle($str);
+        
+    foreach ($str as $elem){
+        if (in_array($text, $str)){
+            $answere = 'Yes';
+        } else {
+             $answere = 'No';
+        }
     } 
-?> -->
+    echo $answere;
+?>
+
+<br>
+
+<?= strchr('ab-cd-ef', '-') ?>
+<br>
+<?= strrchr('ab-cd-ef', '-') ?>
+<br>
+<?=  strstr('ab--cd--ef', '-') ?>
