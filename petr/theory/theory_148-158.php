@@ -176,4 +176,86 @@
     }
 
     var_dump($arr);
+
+    echo '<br><br>';
+
+    $arr = [];
+
+    for ($i = 0; $i < 3; $i++){
+        for ($y = 0; $y < 2; $y++){
+            for ($j = 0; $j < 5; $j++){
+                $arr[$i][$y][$j] = $j + 1;
+            }
+        }
+    }
+
+    var_dump($arr);
+
+    echo '<br><br>';
+
+    $arr = [];
+
+    for ($i = 0, $k = 1; $i < 3; $i++){
+        for ($j = 0; $j < 2; $j++){
+            $arr[$i][$j] = $k++;
+        }
+    }
+
+    var_dump($arr);
+
+    echo '<br><br>';
+
+    $arr = [];
+
+    for ($i = 0, $k = 0; $i < 4; $i++){
+        for ($j = 0; $j < 3; $j++){
+            $arr[$i][$j] = $k += 2;
+        }
+    }
+
+    var_dump($arr);
+
+    echo '<br><br>';
+
+    $arr = [];
+
+    for ($i = 0, $k = 1; $i < 2; $i++){
+        for ($j = 0; $j < 2; $j++){
+            for ($y = 0; $y < 2; $y++){
+                $arr[$i][$j][$y] = $k++;
+            }
+        }
+    }
+
+    var_dump($arr);
+
+    echo '<br><br>';
+
+    $products = [
+		[
+			'name'   => 'мясо',
+			'price'  => 100,
+			'amount' => 5,
+		],
+		[
+			'name'   => 'овощи',
+			'price'  => 200,
+			'amount' => 6,
+		],
+		[
+			'name'   => 'фрукты',
+			'price'  => 300,
+			'amount' => 7,
+		],
+	];
+
+    foreach ($products as $sub) {
+        foreach ($sub as $elem) {
+            echo $elem . ' ';
+        }
+        echo '<br>';
+    }
+
+    echo '<br><br>';
+
 ?>
