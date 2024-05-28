@@ -161,3 +161,20 @@
 <?= ord(' ') . '<br>' ?>
 <?= chr(33) . '<br>' ?>
 <?= chr(mt_rand(65, 90)); ?>
+
+<?php
+    $len = mt_rand(1, 35);
+    for($i = 0; $i <= $len; $i++){
+        echo chr(mt_rand(97, 122));
+    }
+?>
+
+<br>
+
+<!-- <?php
+    $str = 'K';
+    // $big_lat = 
+    if ($str === range('A', 'Z')){
+        echo 'Yes';
+    } 
+?> -->
