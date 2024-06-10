@@ -50,7 +50,47 @@
 <?= preg_replace('#a\Db#', '!', 'avb a1b a2b a3b a4b a5b abb acb') ?>
 <br>
 <?= preg_replace('#a\wb#', '!', 'ave a#b a2b a$b a4b a5b a-b acb') ?>
-
-
+<br>
+<?= preg_replace('#a[bex]a#', '!', 'aba aea aca aza axa') ?>
+<br>
+<?= preg_replace('#a[3-6]a#', '!', 'a1a a3a a7a a9a aba') ?>
+<br>
+<?= preg_replace('#a[a-g]a#', '!', 'aba aea afa aha aga') ?>
+<br>
+<?= preg_replace('#a[a-fj-z]a#', '!', 'aba aea afa aha aga') ?>
+<br>
+<?= preg_replace('#a[a-fA-D]a#', '!', 'aAa aea aEa aJa a3a') ?>
+<br>
+<?= preg_replace('#1[^eb]2#', '!', '1A2 1e2 aEa aJa a3a') ?>
+<br>
+<?= preg_replace('#x[^2-7]z#', '!', '1A2 1e2 aEa aJa a3a') ?>
+<br>
+<?= preg_replace('#x[^A-Z]+z#', '!', '1A2 1e2 aEa aJa a3a') ?>
+<br>
+<?= preg_replace('#x[^A-Za-z1-5]+z#', '!', '1A2 1e2 aEa aJa a3a') ?>
+<br>
+<?= preg_replace('#w[а-яё]w#u', '!', 'wйw wяw wёw wqw') ?>
+<br>
+<?= preg_replace('#[а-яёА-ЯЁ]*#u', '!', 'ааа ббб ёёё ззз ййй ААА БББ ЁЁЁ ЗЗЗ ЙЙЙ') ?>
+<br>
+<?= preg_replace('#a[.+*]a#', '!', 'aba aea aca aza axa a.a a+a a*a') ?>
+<br>
+<?= preg_replace('#x[^.$@]z#', '!', 'xaz x.z x3z x@z x$z xrz') ?>
+<br>
+<?= preg_replace('#a[\d.]+a#', '!', 'a1a a3a a7a a9a aba') ?>
+<br>
+<?= preg_replace('#a[^\da-g]+a#', '!', 'a1a a3a a7a a9a aba') ?>
+<br>
+<?= preg_replace('#x[\[\]\{\}\(\)]*z#', '!', 'x[]z x{}z x.z x()z') ?>
+<br>
+<?= preg_replace('#[\^@]xx#', '!', '^xx axx ^zz bkk @ss') ?>
+<br>
+<?= preg_replace('#[^@^]xx#', '!', '^xx axx ^zz bkk @ss') ?>
+<br>
+<?= preg_replace('#[^^]kk#', '!', '^xx axx ^zz bkk @ss') ?>
+<br>
+<?= preg_replace('#x[a-z-A-Z]z#', '!', 'xaz xBz xcz x-z x@z') ?>
+<br>
+<?= preg_replace('#x[$+-]z#', '!', 'xaz x$z x-z xcz x+z x%z x*z') ?>
 
 
