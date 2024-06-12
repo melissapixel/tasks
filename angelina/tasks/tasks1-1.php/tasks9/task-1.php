@@ -92,5 +92,43 @@
 <?= preg_replace('#x[a-z-A-Z]z#', '!', 'xaz xBz xcz x-z x@z') ?>
 <br>
 <?= preg_replace('#x[$+-]z#', '!', 'xaz x$z x-z xcz x+z x%z x*z') ?>
+<br>
+<?= preg_replace('#^abc#', '!', 'abc def xyz') ?>
+<br>
+<?= preg_replace('#xyz$#', '!', 'abc def xyz') ?>
+<br>
+<?= preg_replace('#x\b#', '!', 'aaa xaa aaa xbb aaa') ?>
+<br>
+<?= preg_replace('#a(e+|x+)a#', '!', 'aeeea aeea aea axa axxa axxxa') ?>
+<br>
+<?= preg_replace('#a(e{2}|x+)a#', '!', 'aeeea aeea aea axa axxa axxxa') ?>
+<br>
+<?= preg_replace('~a(e{2}|x+)a~', '!', 'aeeea aeea aea axa axxa axxxa') ?>
+<br>
+<?= preg_replace('#a\#b#', '!', 'a#b');  ?>
+<br>
+<?= preg_replace('#a\\\\a#', '!', 'a\\b c\\d e\\f'); ?>
+<br>
+<?= preg_replace('#a\\\\+b#', '!', 'a\\b c\\d e\\f'); ?>
+<br>
+<?= preg_replace('#\d{3}#', '!', 'a\\b c\\d e\\f'); ?>
+<br>
+<?= preg_replace('#^http#', '!', 'a\\b c\\d e\\f'); ?>
+<br>
+<?= preg_replace('#^http|^https#', '!', 'a\\b c\\d e\\f'); ?>
+<br>
+<?= preg_replace('#txt$|html$|php$#', '!', 'a\\b c\\d e\\f'); ?>
+<br>
+<?php
+	$arr[] = 4;   
+	$arr[] = 6.8; 
+	$arr[] = 6;   
+	$arr[] = 4.7;   
+	
+    foreach ($arr as $str) {
+		echo $str . ' ' . var_dump(is_float($str)) . '<br>'; 
+	}
+?>
+<br>
 
 
