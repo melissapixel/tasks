@@ -130,5 +130,7 @@
 	}
 ?>
 <br>
-
+<?= preg_match_all('#\d#', 'a1 c\3\d4 e4\\f'); ?>
+<br>
+<?=  preg_replace('#[a-zA-Z]+#i', '!', 'aaa BBB'); ?>
 
