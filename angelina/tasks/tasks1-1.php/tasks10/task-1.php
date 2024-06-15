@@ -68,31 +68,19 @@
     echo "<img src='$src1' >";
 ?>
 <br>
+>
+<p><?php echo date('w'); ?></p>
+<p><?php echo sqrt(4); ?></p>
+<p><?php echo date('Y-m-d H:i:s'); ?></p>
+
 <?php
-    echo "<ul>";
-    for ($i = 1; $i <= 5; $i++) {
-		echo "<p>$i</p>";
-	}
-    echo "</ul>";
+	$str = 'text';
 ?>
+<p><?= $str ?></p>
 <br>
 <?php
-    $arr = ['text1', 'text2', 'text3'];
-    echo "<select>";
-    foreach ($arr as $elem) {
-		echo "<option>$elem</option>";
-	}
-    echo "</select>";
-
-    echo '<table>';
-	foreach ($arr as $user) {
-		echo '<tr>';
-		
-		echo "<td>{$user['name']}</td>";
-		echo "<td>{$user['age']} years</td>";
-		echo "<td>{$user['salary']} dollars</td>";
-		
-		echo '</tr>';
-	}
-	echo '</table>';
+	$arr = ['a' => 1, 'b' => 2, 'c' => 3];
 ?>
+	<p><?= $arr['a'] ?></p>
+	<p><?= $arr['b'] ?></p>
+	<p><?= $arr['c'] ?></p>

@@ -68,4 +68,22 @@
     foreach ($arr as $elem) {
 		echo "<p>$elem</p>";
 	}
+
+	echo '<table>';
+	foreach ($arr as $row) {
+		echo '<tr>';
+		foreach ($row as $key => $cell) {
+			if ($key === 'salary') {
+				$cell .= ' dollars';
+			}
+			
+			echo "<td>$cell</td>";
+		}
+		echo '</tr>';
+	}
+	echo '</table>';
+?>
+<p><?php echo sqrt(4); ?></p>
+<?php
+	
 ?>
