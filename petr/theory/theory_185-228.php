@@ -35,5 +35,11 @@
 
     preg_replace('#a[a-z1-9]a#', 'ok', $str);
 
-    # Инвертирование наборов символов в регулярках
+    preg_match_all('#a#', 'dsfa'); // Выведет количество совпадений
+
+    preg_replace_callback('#a#', function($match){
+        return '!';
+    });
+
+    # Карманы при замене через регулярки на PHP
 ?>
