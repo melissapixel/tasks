@@ -12,4 +12,15 @@
 </form>
     <?= $_GET['num1'] + $_GET['num2'] + $_GET['num3']; ?>
 
-   
+    <form action="" method="GET">
+        <input name="lname">
+        <input name="fname">
+        <input name="dname">
+
+        <input type="submit">
+    </form>
+    <?php
+	if (!empty($_GET)) {
+		echo $_GET['lname'] . ' ' . $_GET['fname'] . ' ' . $_GET['dname'];
+	}
+?>
