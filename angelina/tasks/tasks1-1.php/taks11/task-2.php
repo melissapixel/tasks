@@ -59,3 +59,8 @@
 	</select>
 	<input type="submit">
 </form>
+
+<?php
+		echo $_GET['par1']; // выведет '1'
+
+?>
