@@ -16,5 +16,27 @@
 	$_COOKIE['str'] = 'eee';
 	var_dump($_COOKIE['str']); // срзу выведет 'eee' 
 
+    // Давайте сделаем счетчик обновления страницы:
+    if (!isset($_COOKIE['counter'])) { // первый 
+		заход на страницу 
+		setcookie('counter', 1);
+		$_COOKIE['counter'] = 1;
+	} else {
+		setcookie('counter', $_COOKIE['counter'] 
+			+ 1); 
+		$_COOKIE['counter'] = $_COOKIE['counter'] 
+			+ 1; 
+	}
+	
+	echo $_COOKIE['counter'];
 
+
+    // Давайте для примера установим куку на один час. Так как в часе 3600 секунд, то прибавим это число к текущему моменту:
+    setcookie('test', 'abcde', time() + 3600);
+
+    // Удаление куки приведет к изменению $_COOKIE только после перезагрузки страницы:
+    setcookie('test', '', time());
+	var_dump($_COOKIE['test']); // первый раз выведет значение куки 
+
+    
 ?>
