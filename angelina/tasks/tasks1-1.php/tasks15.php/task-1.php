@@ -5,11 +5,44 @@
 	$name = 'test';      // имя базы данных 
 
     mysqli_report(MYSQLI_REPORT_ERROR | MYSQLI_REPORT_STRICT);
-	$link = new mysqli($host, $user, $pass, $name); 
+	$link = mysqli_connect($host, $user, $pass, $name); 
+	mysqli_query($link, "SET NAMES 'utf8'"); 
 
-
-    $res = mysqli_query($link, "SELECT name FROM users WHERE id=1 ");
-
-	// $res = mysqli_query($link, $query) or die(mysqli_error($link)); 
-	echo $res;
+	$query = 'SELECT * FROM users';
+	$res = mysqli_query($link, $query) or die(mysqli_error($link)); 
+	var_dump($res);
+?>
+<br>
+<?php
+	$row = mysqli_fetch_assoc($res);
+	var_dump($row);
+?>
+<br>
+<?php
+	$query = 'SELECT * FROM users';
+	$res = mysqli_query($link, $query) or die(mysqli_error($link)); 
+?>
+<br>
+<?php
+	for ($data = []; $row = mysqli_fetch_assoc($res); $data[] = $row); 
+	
+	function doSomething($item, $key){
+		echo $key."=>".$item.PHP_EOL;
+	}
+	array_walk_recursive($data, 'doSomething');
+?>
+<br>
+<br>
+<?php
+	$result = mysqli_query($link, 'SELECT * FROM users where age>=17');
+	foreach ($result as $row) {
+		printf("%s (%s)\n", $row["name"], $row["age"]);
+	}
+?>
+<br>
+<?php
+	$result = mysqli_query($link, 'SELECT * FROM users where age<17 or age=17');
+	foreach ($result as $row) {
+		printf("%s (%s)\n", $row["name"], $row["age"]);
+	}
 ?>
