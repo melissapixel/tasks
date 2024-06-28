@@ -46,3 +46,24 @@
 		printf("%s (%s)\n", $row["name"], $row["age"]);
 	}
 ?>
+<br>
+<?php
+	$query = "INSERT INTO users (name, age) VALUES ('kate', 15)";
+	mysqli_query($link, $query);
+?>
+<?php
+	$query = "UPDATE users SET age=24 WHERE name='Kate'";
+	mysqli_query($link, $query); 
+?>
+<?php
+	$query = "DELETE FROM users WHERE name='Kate'"; 
+	mysqli_query($link, $query);
+?>
+<?php
+	$query = "SELECT * FROM users ORDER BY age ";
+	$result = mysqli_query($link, $query); 
+
+	foreach ($result as $row) {
+		printf("%s (%s)\n", $row["name"], $row["age"]);
+	}
+?>
