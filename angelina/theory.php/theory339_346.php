@@ -26,5 +26,11 @@ FROM
 	users
 LEFT JOIN cities ON cities.id=users.city_id
 
-    
+//   Родственные связи данных в PHP
+
+//   Несколько потомков в родственных связях в PHP
+
+// Двойная связь с одной таблицей в PHP
+
+
 ?>
