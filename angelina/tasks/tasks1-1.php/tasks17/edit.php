@@ -1,30 +1,27 @@
 <?php
-$mysqli = new mysqli("localhost","root","","test");
+$conn = new mysqli("localhost","root","","test");
 
 // Check connection
-if ($mysqli -> connect_errno) {
-  echo "Failed to connect to MySQL: " . $mysqli -> connect_error;
+if ($conn -> connect_errno) {
+  echo "Failed to connect to MySQL: " . $conn -> connect_error;
   exit();
 }
 ?>
-<form action="" method="POST">
-	<input name="name">
-	<input name="age">
-	<input name="salary">
-	<input type="submit">
-</form>
 <?php
-    if (isset($_GET['id'])) {
-        $id = $_GET['id'];
-        $query = "SELECT * FROM users WHERE id=$id";
-
-        $result = mysqli_query($mysqli, $query);
-
-        $user = mysqli_fetch_assoc($result);
+$sql = "SELECT * FROM users";
+if($result = $conn->query($sql)){
+    echo "<table><tr><th>Имя</th><th>Возраст</th><th></th></tr>";
+    foreach($result as $row){
+        echo "<tr>";
+            echo "<td>" . $row["name"] . "</td>";
+            echo "<td>" . $row["age"] . "</td>";
+            // echo "<td>" . $row["salary"] . "</td>";
+            echo "<td><a href='save.php?id=" . $row["id"] . "'>Изменить</a></td>";
+        echo "</tr>";
     }
-?>
-
-    if(isset($_POST)){
-        $query = "INSERT INTO users SET name='$name', age='$age', salary='$salary'";
-    }
+    echo "</table>";
+    $result->free();
+} else{
+    echo "Ошибка: " . $conn->error;
+}
 ?>
