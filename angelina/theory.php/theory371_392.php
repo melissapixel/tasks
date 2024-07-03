@@ -162,3 +162,27 @@
 ?> -->
 
 
+<!-- Добавление id пользователя в сессию
+Пусть кроме пометки об авторизации мы бы хотели записать в сессию еще и его id.
+
+В этом случае мы можем получить его с помощью функции mysqli_insert_id. Эта функция получает id последней вставленной в данном скрипте записи, то есть как раз то, что нам нужно.
+
+Реализуем: -->
+<!-- <?php
+	if (!empty($_POST['login']) and !empty($_POST['password'])) {
+        
+		$login = $_POST['login'];
+		$password = $_POST['password'];
+		
+		$query = "INSERT INTO users SET 
+			login='$login', password='$password'"; 
+		mysqli_query($link, $query);
+		
+		$_SESSION['auth'] = true;
+		
+		$id = mysqli_insert_id($link);
+		$_SESSION['id'] = $id; // пишем 
+			id в сессию 
+	}
+?> -->
+

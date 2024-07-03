@@ -28,14 +28,29 @@ if ($conn->connect_error) {
 		mysqli_query($conn, $query);
 		
 		$_SESSION['auth'] = true; // пометка об авторизации 
-        header('Location: task-3.php');
+
+		// $id = mysqli_insert_id($conn);
+		// $_SESSION['id'] = $id; // пишем id в сессию 
+
+		
+
+        
 	}
 ?>
 <?php
-    if ($_SESSION['auth'] == true){
-        echo 'Сссылка для премиум пользователей';
-        ?>
-        <a href="#">Сссылка для премиум пользователей</a>
-        <?php
-    }
+	if(isset($_SESSION['auth'])){
+		if ($_SESSION['auth'] == true){
+			echo 'Сссылка для премиум пользователей';
+			?>
+			<a href="#">Сссылка для премиум пользователей</a>
+			<?php
+			// echo $id;
+			// header('Location: task-3.php');
+		}
+		else{
+			echo 'ТЫ не авторизован';
+		}
+	}
+
+	header('Location: task-3.php');
 ?>
