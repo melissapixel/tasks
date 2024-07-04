@@ -80,7 +80,8 @@ if ($conn->connect_error) {
                     $_SESSION['id'] =  $user['id'];
                     $id = $_SESSION['id'];
                     ?>
-                    <a href="task-6.php">Ссылочка</a>
+                    <a href="task-6.php">Rename ur dates</a>
+                    <a href="task-7.php">Delete ur profile</a>
                     <?php
                 } else {
                     echo "Пользователь не найден";

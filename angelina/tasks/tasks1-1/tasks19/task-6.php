@@ -35,7 +35,7 @@ if ($conn->connect_error) {
         $stmt = $conn->prepare("UPDATE example SET name=?, login=? WHERE id=?");
         $stmt->bind_param("ssi", $name, $login, $id);
     
-        // Выполнение запроса и проверка на ошибки
+        // Выполнение запроса и проверкzа на ошибки
         if ($stmt->execute()) {
             $_SESSION['name'] =  $name;
             $_SESSION['login'] =  $login;
