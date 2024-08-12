@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<root>
+	<test>text</test>
+    <!-- <tag>text</tag> -->
+    <name>john</name>
+
+    <!-- <tag>text1</tag>
+	<tag>text2</tag>
+	<tag>text3</tag> -->
+
+    <name>john</name>
+	<name>eric</name>
+	<name>kyle</name>
+
+    <!-- <tag attr="val1">text1</tag>
+	<tag attr="val2">text2</tag>
+	<tag attr="val3">text3</tag> -->
+
+	<user age="23" salary="1000">john</user>
+
+    <product cost="100" amount="3">
+		prod1
+	</product>
+	<product cost="200" amount="4">
+		prod2
+	</product>
+	<product cost="300" amount="5">
+		prod3
+	</product>
+
+    <tag1>
+		<tag2>
+			<tag3>
+				text
+			</tag3>
+		</tag2>
+	</tag1>
+
+
+    <tag>
+		<elem>text1</elem>
+	</tag>
+	<tag>
+		<elem>text2</elem>
+	</tag>
+	<tag>
+		<elem>text3</elem>
+	</tag>
+
+    <tag4>
+		<elem-child>text</elem-child>
+	</tag4>
+</root>
